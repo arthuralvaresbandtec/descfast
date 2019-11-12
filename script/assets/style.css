@@ -1,0 +1,226 @@
+*{  margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav
+{
+    height: 70px;
+    background-color: #292929;
+    float: left;
+    position: fixed;
+    display: flex;
+    min-height: 8vh;
+    min-width: 100%;
+}
+
+.nav-links {
+    display: block;
+    justify-content: space-around;
+    min-width: 65%;
+    margin-left: 3%
+}
+.logo
+{
+    color: whitesmoke;
+    font-size: 2em;
+    margin-left: 30px;
+    margin-top: 15px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-around;
+    min-width: 20%;
+    margin-left: 9%
+}
+
+li {
+    list-style: none;
+    margin-right: 20px;
+    margin-top: 28px;
+    margin-left: 50px;
+    color: rgb(240, 240, 240);
+    
+}
+
+li:last-child {
+    border-right: none;
+}
+
+li img{
+    margin-left: 200px;
+    margin-top: -7px;
+}
+
+.nav-links a {
+    color: rgb(240, 240, 240);
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.btn
+{
+    height: 40px;
+    width: 150px;
+    border-radius: 4px;
+    border:none;
+    margin-top: 15px;
+    margin-left: 150px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.home
+{
+    background-image: url("../../imagens/fundo.jpg");
+    height: 700px;
+    width: 100%;
+}
+
+.logo1
+{
+    margin-left: 53%;
+    margin-top: 1%;
+    height: 500px;
+}
+
+.imagem_home
+{
+    height: 500px;
+    margin-top: -28%;
+    margin-left: 90px;
+}
+
+.texto_home
+{
+    color: whitesmoke;
+    font-size: 1.5em;
+    margin-top:-22%;
+    margin-left:55%
+}
+
+.btn2
+{
+    margin-left: 66%; 
+    height: 40px;
+    width: 150px;
+    border-radius: 4px;
+    border:none;
+    margin-top: 15px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.pagina
+{
+    height: 1800px;
+    font-size: 20px;
+}
+
+.linha_vertical
+{
+    width: 9px;
+    height: 1480px;
+    background-color: #292929;
+    float: left;
+    margin-left: 20%;
+    margin-top:80px;
+    border-radius: 5px;
+}
+
+.conteudo
+{
+    margin-left:500px;
+    float: right;
+    margin-top:-1480px;
+}
+
+.img_uso
+{
+margin-top: 30px;
+}
+
+.empresas
+{
+    margin-top: 10%;
+}
+
+.contato
+{
+    margin-top: 8%;
+}
+
+.telefone
+{
+    font-size: 14px;
+}
+
+input
+{
+        height:35px;
+        width: 600px;
+        font-size:14pt;
+        padding: 4px 4px;
+}
+textarea {
+    width: 605px;
+    height: 150px;
+    padding: 4px 4px;
+    box-sizing: border-box;
+    font-size: 14pt;
+    resize: none;
+  }
+.btn_enviar
+{
+    height: 40px;
+    width: 150px;
+    border-radius: 4px;
+    border:none;
+    margin-top: 15px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#292929 ;
+    color: white;
+    text-align: center;
+  }
+
+img{
+    height: 30px;
+}
+
+.como_usar img 
+{
+    margin-bottom: 20px;
+    margin-left: 40px; 
+    height: 210px;
+    width: 441px;
+}
+
+.tutorial  
+{
+    height: 250px;
+    width: 520px;
+    border: #292929 solid 2px;
+    border-radius: 7px;
+}
+
+.empresas img{
+    margin-top: 25px;
+    width: 600px;
+    height: 150px;
+}
+
+.sair
+{
+    color: red;
+}
+
+html {
+    scroll-behavior: smooth;
+  }

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login DescFast</title>
+    <link rel="stylesheet" href="../assets/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <script src="../assets/principal.js"></script>
+</head>
+<body>
+    <div class="pagina">
+
+            <nav id="nav">
+                
+                    <div class="logo">
+                    <b>DESCFAST</b>
+                    </div>
+    
+                    <ul class="nav-links">
+
+                    </ul>
+                    
+                    <button onclick="login_voltar()" class="btn_voltar"><< Voltar</button>
+                </nav>
+                <br>
+        <div class="box">
+            <div id="mostrar_login" class="login">
+                <b class="logo2">DESCFAST</b> <br> <br>
+                <h3>Login</h3> <br>
+
+                    <label>E-mail</label> <br>
+                        <input type="text" id="email_login" autofocus> <br> <br>
+
+                    <label>Senha</label><br>
+                        <input type="password" id="senha_login"> <br>
+
+                        <u  class="esqueci" onclick="esqueci()">Esqueceu sua senha? </u><br>
+                        <u  onclick="mostrar()">Não tem uma conta? Crie uma!</u> <br><br>
+
+                   <button onclick="login_fazer_login()" class="btn">LOGIN</button>
+            </div> 
+
+            <div id="mostrar_cadastro" class="cadastro" style="display: none">
+                    <b class="logo2">DESCFAST</b> <br> <br>
+                    <h3>Cadastro</h3> <br>
+                    <label>Nome</label> <br>
+                        <input type="text" id="nome_cadastro"> <br> <br>
+
+                    <label>E-mail</label> <br>
+                        <input type="text" id="email_cadastro"> <br> <br>
+
+                    <label>Senha</label><br>
+                        <input type="password" id="senha_cadastro"> <br> <br>
+
+                        <button onclick="login_fazer_cadastro()" class="btn">CADASTRO</button>
+            </div> 
+        </div>
+
+    </div>
+</body>
+</html>
