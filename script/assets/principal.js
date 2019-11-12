@@ -2,7 +2,7 @@
 //index
 function index_cadastro()
 {
-    location.href="../html/login.html"
+    location.href="login.html"
 }
 
 function index_login()
