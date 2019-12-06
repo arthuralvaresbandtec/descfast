@@ -28,27 +28,7 @@ function login_voltar()
     location.href=" index.html"
 }
 
-function login_fazer_cadastro()
-{
-    alert('Cadastro efetuado com sucesso!');
-    location.href=" principal.html";
-}
 
-function login_fazer_login()
-{
-    var email = email_login.value;
-    var senha = senha_login.value;
-    
-    if (senha == "admin" && email == "admin@descfast.com")
-    {
-        location.href=" principal.html";
-    }
-    
-    else
-    {
-        alert('Usuário ou senha incorreta')
-    }
-}
 
 function mostrar()
 {

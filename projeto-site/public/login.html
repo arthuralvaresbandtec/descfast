@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login DescFast</title>
+    <link rel="stylesheet" href="script/assets/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+    <script src="script/assets/principal.js"></script>
+</head>
+<body>
+    <div class="pagina">
+
+            <nav id="nav">
+                
+                    <div class="logo">
+                    <b>DESCFAST</b>
+                    </div>
+    
+                    <ul class="nav-links">
+
+                    </ul>
+                    
+                    <button onclick="login_voltar()" class="btn_voltar"><< Voltar</button>
+                </nav>
+                <br>
+        <div class="box">
+            <div id="mostrar_login" class="login">
+                <b class="logo2">DESCFAST</b> <br> <br>
+                <h3>Login</h3> <br>
+
+                <form id="form_login" method="post" onsubmit="return entrar()">
+                    <label>E-mail</label> <br>
+                        <input type="text" id="email_login" name="login" autofocus> <br> <br>
+
+                    <label>Senha</label><br>
+                        <input type="password" id="senha_login" name="senha"> <br>
+
+                        <u  class="esqueci" onclick="esqueci()">Esqueceu sua senha? </u><br>
+                        <u  onclick="mostrar()">Não tem uma conta? Crie uma!</u> <br><br>
+
+                   <button onclick="entrar()" id="btn_entrar" class="btn">LOGIN</button>
+                </form>
+                <img src="aguarde.gif" id="img_aguarde" style="display: none;">
+    
+        <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+        
+    </div>
+            </div> 
+
+            <div id="mostrar_cadastro" class="cadastro" style="display: none">
+                    <b class="logo2">DESCFAST</b> <br> <br>
+                    <h3>Cadastro</h3> <br>
+
+                    <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                    <label>Nome</label> <br>
+                        <input type="text" name="nome" id="nome_cadastro"> <br> <br>
+
+                    <label>E-mail</label> <br>
+                        <input type="text" name="login" id="email_cadastro"> <br> <br>
+
+                    <label>Senha</label><br>
+                        <input type="password" name="senha" id="senha_cadastro"> <br> <br>
+
+                        <button class="btn">CADASTRO</button>
+                     </form>
+            </div> 
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+<script>
+
+function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='principal.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            console.log("resposta",resposta)
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    
+                    window.location.href = 'principal.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                response.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display = 'block';
+        div_erro.style.display = 'none';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display= 'none';
+        div_erro.style.display = 'block';
+        div_erro.innerHTML = resposta;
+    }
+
+</script>
